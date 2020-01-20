@@ -1,87 +1,61 @@
-<head>
+The goal of this project is to replicate and extend the results obtained by the [Agnostic Feature Selection](https://www.ecmlpkdd2019.org/downloads/paper/744.pdf) paper.
 
-  <!-- Basic Page Needs
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>xStream: Detecting outliers in Feature-Evolving Data Streams</title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+## Installation
+### Install pipenv
+```markdown
+# for linux adds pipenv to the path
+sudo -H pip install -U pipenv
 
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+# for Mac
+brew install pipenv
 
-  <!-- FONT
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!--<link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">-->
+# generally use (but then add it to your PATH variable)
+pip install --user pipenv
+```
 
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
-  <link rel="stylesheet" href="css/styles.css">
+### Install dependencies
+```markdown
+# use --skip-lock because one dependency of tensorflow is currently broken
+# installs all packages listed in Pipefile with its dependencies
+pipenv install --skip-lock
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!--<link rel="icon" type="image/png" href="images/favicon.png">-->
+# installs a new package
+pipenv install [packages sepearated by space] --skip-lock
+```
 
-</head>
-<body>
+### Use pipenv
+1. Run the installation command which creates a virtual env file somewhere.
+2. Run a script
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <section class="header">
-      <div>
-        <img class="logo" src="https://avatars0.githubusercontent.com/u/36132856?s=400&u=b4beebdfa1c1ec0fbd95dd1522bb157e63883fc4&v=4" width="75"/>
-        <h1 class="title">xStream</h1>
-      </div>
-      <h4 class="subtitle">Outlier Detection in Feature-Evolving Data Streams</h4>
-    </section>
-    <section class="summary">
-      <p>
-        xStream detects outliers in <b>feature-evolving data streams</b>, where
-        the full feature-space is unknown a-priori and evolves over time.
-      </p>
-      <p>
-        xStream is <b>accurate</b> in all three settings: (i) static data, (ii) row-streams, and (iii) feature-evolving streams,
-        as demonstrated over multiple datasets in each setting.
-      </p>
-      <p>
-        xStream <b>scales</b> to over 1,000 point updates per-second (Intel Xeon® at 2.1GHz),
-        while consuming bounded space.
-      </p>
-      <p class="alert" style="text-align:left;">
-        Emaad Manzoor, Hemank Lamba, Leman Akoglu.
-        Outlier Detection in Feature-Evolving Data Streams.
-        In <i>24th ACM SIGKDD International Conference on Knowledge Discovery and Data mining (KDD).</i> 2018.
-      </p>
-    </section>
-    <section class="code-links">
-      <a href="https://github.com/cmuxstream/cmuxstream-core" class="btn">
-        Code
-      </a>
-      <a href="https://github.com/cmuxstream/cmuxstream-data" class="btn">
-        Data
-      </a>
-      <a href="http://www.kdd.org/kdd2018/accepted-papers/view/xstream-outlier-detection-in-feature-evolving-data-streams" class="btn">
-        Paper
-      </a>
-      <a href="https://www.youtube.com/watch?v=PT-e9vq_pKc" class="btn">
-        Promo
-      </a>
-      <a href="#" class="btn">
-        Poster
-      </a>
-    </section>
-    <section class="footer">
-      emaad@cmu.edu
-      &nbsp; &middot; &nbsp;
-      hlamba@andrew.cmu.edu
-      &nbsp; &middot; &nbsp;
-      lakoglu@andrew.cmu.edu
-    </section>
-  </div>
-</body>
-<!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+```markdown
+# replace file with pipeline
+pipenv run python -m [file]
+
+# keep pipenv shell open
+pipenv shell
+```
+
+Otherwise use it with PyCharm.
+1. Install pipenv && run pipenv install (as seen above)
+1. Close PyCharm
+2. Delete the .idea folder in the project directory
+3. Reopen PyCharm in this Project
+4. The pipenv should be detected automatically by PyCharm
+
+Verify this in File -> Settings -> Project: .. -> Project Interpreter
+On the top there should a Pipenv project interpreter.
+
+If not click on the gear and add. Choose a virtual environment and then add an existing one. Find the
+folder with the pipenv (on linux ~/.local/share/virtualenvs/DM_Lab[hash]/bin/python37) and select the
+interpreter than close the window and wait for the scan to happen.
+
+
+### Run an experiment
+
+If you are using PyCharm then add `--config path/to/config` to the run configurations.
+
+Otherwise use:
+```markdown
+pipenv run python -m pipeline --config path/to/config
+```
+
