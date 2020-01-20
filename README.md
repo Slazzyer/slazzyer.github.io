@@ -58,19 +58,19 @@
       </p>
     </section>
     <section class="code-links">
-      <a href="https://github.com/cmuxstream/cmuxstream-core" class="button">
+      <a href="https://github.com/cmuxstream/cmuxstream-core" class="btn">
         Code
       </a>
-      <a href="https://github.com/cmuxstream/cmuxstream-data" class="button">
+      <a href="https://github.com/cmuxstream/cmuxstream-data" class="btn">
         Data
       </a>
-      <a href="http://www.kdd.org/kdd2018/accepted-papers/view/xstream-outlier-detection-in-feature-evolving-data-streams" class="button">
+      <a href="http://www.kdd.org/kdd2018/accepted-papers/view/xstream-outlier-detection-in-feature-evolving-data-streams" class="btn">
         Paper
       </a>
-      <a href="https://www.youtube.com/watch?v=PT-e9vq_pKc" class="button">
+      <a href="https://www.youtube.com/watch?v=PT-e9vq_pKc" class="btn">
         Promo
       </a>
-      <a href="#" class="button">
+      <a href="#" class="btn">
         Poster
       </a>
     </section>
